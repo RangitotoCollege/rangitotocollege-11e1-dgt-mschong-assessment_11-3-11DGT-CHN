@@ -5,19 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Webpage</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <h1 id="Heading"></h1>
-    <p id="Subheading"></p>
-    
-    <script src="index.js">
-    </script>
-    <script>
-    // Create a heading from HTML
-    document.getElementById("Heading").innerHTML = "MY JAVASCRIPT WEBPAGE";
-    // Create a subheading from HTML
-    document.getElementById("Subheading").innerHTML = "My first Javascript subheading! This is a subheading created using JavaScript.";
-      
-    </script>
+  <!--The navbar across webpages-->
+  <div class = "navbar">
+    <a class = "current" href="">Homepage</a>
+    <div class= "learningdropdown">
+      <button class="dropbtn">Learning&nbsp;
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class = "learningcontent">
+        <a href="">Subtopic 1</a>
+        <a href="">Subtopic 2</a>
+        <a href="">Subtopic 3</a>
+      </div>
+    </div>
+    <div class= "learningdropdown">
+      <button class="dropbtn">Flashcards&nbsp;
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class = "learningcontent">
+        <a href="">Subtopic 1</a>
+        <a href="">Subtopic 2</a>
+        <a href="">Subtopic 3</a>
+      </div>
+    </div>
+    <div class= "learningdropdown">
+      <button class="dropbtn">Quizzes&nbsp;
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class = "learningcontent">
+        <a href="">Easy</a>
+        <a href="">Medium</a>
+        <a href="">Hard</a>
+      </div>
+    </div>
+  </div>
+  <div class ="introduction">
+    <h1 class ="intro">Here to cram for an exam? We got you.</h1>
+    <h2 class="introsub">With this study resource, you will be able to learn more about the NCEA Level 1 Biology <br>curriculum to cram for the end of year.  </h2>
+  </div>
   </body>
 </html>
