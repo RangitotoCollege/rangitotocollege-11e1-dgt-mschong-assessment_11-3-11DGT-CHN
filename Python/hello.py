@@ -18,15 +18,56 @@ frame.pack(pady=20)
 #Program Title
 label = Label(frame, text=title, font=("Arial", 35))
 
+#Tutorial Functions
+def GK_tutorial():
+    tutorial_window = Toplevel(m)
+    tutorial_window.resizable(False, False) # code learned from stack overflow
+    tutorial_window.title("How to play: {}".format(Game1))
+    tutorial_label = Label(tutorial_window, text="Welcome to the General Knowledge Quiz!\n\n"
+    "This game is simple! You will be asked 10 randomly selected questions,\n"
+    "and all you have to do is answer them correctly and you can get full\n"
+    "marks!\n\nGood Luck!", font=("Arial", 12), justify=LEFT)
+    tutorial_label.pack(padx=20, pady=20)
+    ok_button = Button(tutorial_window, text="OK", width=round(button_width/4), command=tutorial_window.destroy)
+    ok_button.pack(pady=10)
+
+def W_tutorial():
+    tutorial_window = Toplevel(m)
+    tutorial_window.resizable(False, False) # code learned from stack overflow
+    tutorial_window.title("How to play: {}".format(Game2))
+    tutorial_label = Label(tutorial_window, text="Welcome to Wordle!\n\n"
+    "I'm sure you know how this goes, you will be given 6 chances to guess a 5 letter word.\n"
+    "After each guess, the letters will change colour to show how close you are\n"
+    "to guessing the word. Green means the letter is in the correct position,\n"
+    "yellow means the letter is in the word but in the wrong position,\n"
+    "and Grey means the letter is not in the word at all.\n\nGood Luck!", font=("Arial", 12), justify=LEFT)
+    tutorial_label.pack(padx=20, pady=20)
+    ok_button = Button(tutorial_window, text="OK", width=round(button_width/4), command=tutorial_window.destroy)
+    ok_button.pack(pady=10)
+
+def HM_tutorial():
+    tutorial_window = Toplevel(m)
+    tutorial_window.resizable(False, False) # code learned from stack overflow
+    tutorial_window.title("How to play: {}".format(Game3))
+    tutorial_label = Label(tutorial_window, text="Welcome to Hangman!\n\n"
+    "In this game, you will be given a word with missing letters.\n"
+    "You have to guess the word by suggesting letters within a certain number of guesses.\n"
+    "For each incorrect guess, a part of the hangman will be drawn.\n"
+    "You have 6 incorrect guesses before the hangman is fully drawn and you lose!\n\nGood Luck!", font=("Arial", 12), justify=LEFT)
+    tutorial_label.pack(padx=20, pady=20)
+    ok_button = Button(tutorial_window, text="OK", width=round(button_width/4), command=tutorial_window.destroy)
+    ok_button.pack(pady=10)
+
 #Prgram Menu
 menu = Menu(m)
 m.config(menu=menu)
 help_menu = Menu(menu)
 menu.add_cascade(label="Tutorial", menu=help_menu)
-help_menu.add_command(label="How to play: {}".format(Game1))
-help_menu.add_command(label="How to play: {}".format(Game2))
-help_menu.add_command(label="How to play: {}".format(Game3))
+help_menu.add_command(label="How to play: {}".format(Game1), command=GK_tutorial)
+help_menu.add_command(label="How to play: {}".format(Game2), command=W_tutorial)
+help_menu.add_command(label="How to play: {}".format(Game3), command=HM_tutorial)
 
+global button_width, button_height
 button_width = 20
 button_height = 5
 
@@ -37,8 +78,8 @@ menu_button3 = Button(frame, text="Game 3", width=button_width, height=button_he
 menu_exit = Button(m, text="Exit Program", command=m.quit, width=button_width, height=round(button_height/2))
 
 #program layout
-label.grid(row=0, column=0, columnspan=3, sticky=W+E, pady=25)
-menu_button1.grid(row=1, column=0)
+label.grid(row=0, column=0, columnspan=3, sticky=W+E)
+menu_button1.grid(row=1, column=0, pady=30)
 menu_button2.grid(row=1, column=1, padx=40)
 menu_button3.grid(row=1, column=2)
 menu_exit.pack(fill=BOTH, side=BOTTOM, pady=20, padx=button_width*5)
