@@ -1,5 +1,7 @@
 from tkinter import *
 m = Tk()
+
+global title, Game1, Game2, Game3
 title = "Caio's Cool Collections"
 m.title(title)
 Game1 = "General Knowledge Quiz"
@@ -11,12 +13,15 @@ width = 1080
 height = 720
 m.geometry("{}x{}".format(width, height))
 
-#Frame
+#Button size
+global button_width, button_height
+button_width = 20
+button_height = 5
+
+#Initial Frame
+global frame
 frame = Frame(m)
 frame.pack(pady=20)
-
-#Program Title
-label = Label(frame, text=title, font=("Arial", 35))
 
 #Tutorial Functions
 def GK_tutorial():
@@ -25,8 +30,8 @@ def GK_tutorial():
     tutorial_window.title("How to play: {}".format(Game1))
     tutorial_label = Label(tutorial_window, text="Welcome to the General Knowledge Quiz!\n\n"
     "This game is simple! You will be asked 10 randomly selected questions,\n"
-    "and all you have to do is answer them correctly and you can get full\n"
-    "marks!\n\nGood Luck!", font=("Arial", 12), justify=LEFT)
+    "and all you have to do is answer them correctly and you can get all the\n"
+    "points!\n\nGood Luck!", font=("Arial", 12), justify=LEFT)
     tutorial_label.pack(padx=20, pady=20)
     ok_button = Button(tutorial_window, text="OK", width=round(button_width/4), command=tutorial_window.destroy)
     ok_button.pack(pady=10)
@@ -58,33 +63,61 @@ def HM_tutorial():
     ok_button = Button(tutorial_window, text="OK", width=round(button_width/4), command=tutorial_window.destroy)
     ok_button.pack(pady=10)
 
+#Game Functions
+def GK_game():
+    menu_frame.destroy()
+
+    global GK_frame
+    GK_frame = Frame(m)
+    GK_frame.pack(pady=20)
+
+    
+    GK_label = Label(GK_frame, text="General Knowledge Quiz", font=("Arial", 30))
+    GK_label.grid(row=0, column=0, columnspan=2, sticky=W+E)
+
 #Prgram Menu
-menu = Menu(m)
-m.config(menu=menu)
-help_menu = Menu(menu)
-menu.add_cascade(label="Tutorial", menu=help_menu)
-help_menu.add_command(label="How to play: {}".format(Game1), command=GK_tutorial)
-help_menu.add_command(label="How to play: {}".format(Game2), command=W_tutorial)
-help_menu.add_command(label="How to play: {}".format(Game3), command=HM_tutorial)
+def tutorial_menu():
+    menu = Menu(m)
+    m.config(menu=menu)
+    help_menu = Menu(menu)
+    menu.add_cascade(label="Tutorial", menu=help_menu)
+    help_menu.add_command(label="How to play: {}".format(Game1), command=GK_tutorial)
+    help_menu.add_command(label="How to play: {}".format(Game2), command=W_tutorial)
+    help_menu.add_command(label="How to play: {}".format(Game3), command=HM_tutorial)
 
-global button_width, button_height
-button_width = 20
-button_height = 5
+#Menu function
+def menu():
+    tutorial_menu()
+    frame.destroy()
 
-#Menu Buttons
-menu_button1 = Button(frame, text="Game 1", width=button_width, height=button_height)
-menu_button2 = Button(frame, text="Game 2", width=button_width, height=button_height)
-menu_button3 = Button(frame, text="Game 3", width=button_width, height=button_height)
-menu_exit = Button(m, text="Exit Program", command=m.quit, width=button_width, height=round(button_height/2))
+    global menu_frame
+    menu_frame = Frame(m)
+    menu_frame.pack(pady=20)
 
-#program layout
-label.grid(row=0, column=0, columnspan=3, sticky=W+E)
-menu_button1.grid(row=1, column=0, pady=30)
-menu_button2.grid(row=1, column=1, padx=40)
-menu_button3.grid(row=1, column=2)
-menu_exit.pack(fill=BOTH, side=BOTTOM, pady=20, padx=button_width*5)
+    #Program Title
+    label = Label(menu_frame, text="Caio's Cool Collections", font=("Arial", 35))
 
+    #Menu Buttons
+    menu_button1 = Button(menu_frame, text="Game 1", width=button_width, height=button_height, command=GK_game)
+    menu_button2 = Button(menu_frame, text="Game 2", width=button_width, height=button_height)
+    menu_button3 = Button(menu_frame, text="Game 3", width=button_width, height=button_height)
+    menu_exit = Button(m, text="Exit Program", command=m.quit, width=button_width, height=round(button_height/2))
 
+    #program layout
+    label.grid(row=0, column=0, columnspan=3, sticky=W+E, pady=20)
+    menu_button1.grid(row=1, column=0, pady=30)
+    menu_button2.grid(row=1, column=1, padx=40)
+    menu_button3.grid(row=1, column=2)
+    menu_exit.pack(fill=BOTH, side=BOTTOM, pady=20, padx=button_width*5)
 
+#Beginning message
+title = Label(frame, text="Welcome to Caio's Cool Collections!", font=("Arial", 30), justify=CENTER)
+subtext = Label(frame, text="Before we begin, please enter your name below:", font=("Arial", 18), justify=CENTER)
+title.pack(pady=(50,20))
+subtext.pack(pady=(20,50))
+name_entry = Entry(frame, font=("Arial", 16))
+enter_button = Button(frame, text="Enter", font=("Arial", 12), command=menu)
+name_entry.pack()
+enter_button.pack(pady=20)
 
 m.mainloop()
