@@ -83,7 +83,7 @@ def GK_game():
 def exit_to_menu():
     GK_frame.destroy()
     menu_exit.destroy()
-    menu()
+    open_menu()
 
 #Prgram Menu
 def tutorial_menu():
@@ -94,6 +94,43 @@ def tutorial_menu():
     help_menu.add_command(label="How to play: {}".format(Game1), command=GK_tutorial)
     help_menu.add_command(label="How to play: {}".format(Game2), command=W_tutorial)
     help_menu.add_command(label="How to play: {}".format(Game3), command=HM_tutorial)
+
+#Open Menu function
+def open_menu():
+    tutorial_menu()
+        
+    frame.destroy()
+    global menu_frame
+    menu_frame = Frame(m)
+    menu_frame.pack(pady=20)
+
+    #Program Title
+    if "Caio" in player_name.title():
+        text = "Welcome, Creator!"
+    elif "Chong" in player_name.title():
+        text = "Welcome, miss!"
+    elif "Ethan" in player_name.title():
+        text = "Get out of my program, Ethan."
+    else:
+        text = "Welcome, {}!".format(player_name)
+    welcome_label = Label(menu_frame, text=text, font=("Arial", 18))
+    label = Label(menu_frame, text="Caio's Cool Collections", font=("Arial", 35))
+
+    #Menu Buttons
+    menu_button1 = Button(menu_frame, text="Game 1", width=button_width, height=button_height, command=GK_game)
+    menu_button2 = Button(menu_frame, text="Game 2", width=button_width, height=button_height)
+    menu_button3 = Button(menu_frame, text="Game 3", width=button_width, height=button_height)
+    global menu_exit
+    menu_exit = Button(m, text="Exit Program", command=m.quit, width=button_width, height=round(button_height/2))
+
+    #program layout
+    welcome_label.grid(row=0, column=0, columnspan=3, sticky=W+E)
+    label.grid(row=1, column=0, columnspan=3, sticky=W+E, pady=20)
+    menu_button1.grid(row=2, column=0, pady=30)
+    menu_button2.grid(row=2, column=1, padx=40)
+    menu_button3.grid(row=2, column=2)
+    menu_exit.pack(fill=BOTH, side=BOTTOM, pady=20, padx=button_width*5)
+
 
 #Menu function
 def menu():
@@ -106,39 +143,7 @@ def menu():
         error_mes = Label(frame, text="Please enter a name to continue.", font=("Arial", 12), fg="red")
         error_mes.pack()
     else:
-        tutorial_menu()
-        
-        frame.destroy()
-        global menu_frame
-        menu_frame = Frame(m)
-        menu_frame.pack(pady=20)
-
-        #Program Title
-        if "Caio" in player_name.title():
-            text = "Welcome, Creator!"
-        elif "Chong" in player_name.title():
-            text = "Welcome, miss!"
-        elif "Ethan" in player_name.title():
-            text = "Get out of my program, Ethan."
-        else:
-            text = "Welcome, {}!".format(player_name)
-        welcome_label = Label(menu_frame, text=text, font=("Arial", 18))
-        label = Label(menu_frame, text="Caio's Cool Collections", font=("Arial", 35))
-
-        #Menu Buttons
-        menu_button1 = Button(menu_frame, text="Game 1", width=button_width, height=button_height, command=GK_game)
-        menu_button2 = Button(menu_frame, text="Game 2", width=button_width, height=button_height)
-        menu_button3 = Button(menu_frame, text="Game 3", width=button_width, height=button_height)
-        global menu_exit
-        menu_exit = Button(m, text="Exit Program", command=m.quit, width=button_width, height=round(button_height/2))
-
-        #program layout
-        welcome_label.grid(row=0, column=0, columnspan=3, sticky=W+E)
-        label.grid(row=1, column=0, columnspan=3, sticky=W+E, pady=20)
-        menu_button1.grid(row=2, column=0, pady=30)
-        menu_button2.grid(row=2, column=1, padx=40)
-        menu_button3.grid(row=2, column=2)
-        menu_exit.pack(fill=BOTH, side=BOTTOM, pady=20, padx=button_width*5)
+        open_menu()
 
 #Beginning message
 title = Label(frame, text="Welcome to Caio's Cool Collections!", font=("Arial", 30), justify=CENTER)
