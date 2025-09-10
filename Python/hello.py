@@ -70,15 +70,25 @@ def HM_tutorial():
 def GK_game():
     menu_frame.destroy()
 
+    q_a = {
+        "What is the closest planet to the sun?": "Mercury",
+        "Who came up with the term 'debugbing'?": "Grace Hopper",
+        "What program was ChatGPT created on?": "Python",
+        "What is the meaning of life, the universe and everything?": "42",
+        "What does the acronym 'www' stand for?": "World Wide Web",
+        "What is the name of the first 3D platforming video game?": "Super Mario 64",
+    }
+
     global GK_frame
     GK_frame = Frame(m)
     GK_frame.pack(pady=20)
 
     GK_label = Label(GK_frame, text="General Knowledge Quiz", font=("Arial", 30))
     GK_label.grid(row=0, column=0, columnspan=2, sticky=W+E)
-
     global menu_exit
     menu_exit.config(text="Exit to Menu", command=exit_to_menu)
+
+
 
 def exit_to_menu():
     GK_frame.destroy()
