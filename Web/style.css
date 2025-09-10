@@ -84,6 +84,52 @@ body{
     color: #8bad8b;
 }
 
+.slidesintro .titlecards{
+    font-family: "Lexend Deca", sans-serif;
+    color: #627455;
+    font-weight:400px;
+    font-size:33px;
+
+}
+
+.flashintro .titlecards{
+    margin-right: 30px;
+    font-family: "Lexend Deca", sans-serif;
+    color: #627455;
+    font-weight:400px;
+    font-size:33px;
+}
+
+.quizzesintro .titlecards{
+    margin-right: 30px;
+    font-family: "Lexend Deca", sans-serif;
+    color: #627455;
+    font-weight:400px;
+    font-size:33px;
+
+}
+
+.placeholder1{
+    float: left;
+    width: 500px;
+    height:320px;
+    margin: 50px;
+    padding-left: 50px;
+}
+.placeholder2{
+    float:right;
+    width: 500px;
+    height:320px; 
+    margin: 50px;
+    padding-top:50px;
+}
+.placeholder3{
+    float: left;
+    width: 500px;
+    height: 320px;
+    margin-left:50px;
+}
+
 .topics{
     font-family: "Lexend Deca", sans-serif;
     overflow: hidden;
@@ -128,24 +174,17 @@ body{
     overflow:hidden;
 }
 
-.titlecards{
-    font-family: "Lexend Deca", sans-serif;
-    color: #627455;
-    font-weight:400px;
-    font-size:33px;
-    margin-left:100px;
-    margin-top:70px;
 
-}
 
 .subcards{
     font-family: "Lexend Deca", sans-serif;
     color: #627455;
     font-weight: normal; 
     font-size: 16px;
+    margin-left: 50px;
     margin-top:40px;
-    margin-left:100px;
 }
+
 .collapsible{
     background-color: #e6f0dc;
     color:#627455;
@@ -171,11 +210,151 @@ body{
     overflow:hidden;
     background-color:#e6f0dc
 }
-.placeholder{
-    float:right;
-    width:550px;
-    height:300px;
-    margin-right:100px;
-    margin-top:-200px;
 
+.learningheading{
+    font-family: "Lexend Deca", sans-serif;
+    text-align: center;
+    color: white;
+    background-color: #8bad8b;
+    font-size: 80px;
+    margin: 0px;
+    padding: 110px;
+    font-weight:40px;
+}
+
+.learningsub{
+    font-family: "Lexend Deca", sans-serif;
+    text-align: center;
+    font-size: 18px;
+    color: #627455;
+    padding-top: 5px;
+
+}
+
+.headersub{
+    font-size: 30px;
+    text-align: center;
+    color: #627455;
+    font-weight: 60px;
+    padding-top: 10px;
+    font-family: "Lexend Deca", sans-serif;
+}
+*{box-sizing:border-box}
+
+.slideshow-container{
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+
+}
+.mySlides{
+    display: none;
+}
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight:bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover{
+    background-color: rgba(0,0,0,0.8)
+}
+.captiontext{
+    color: #627455;
+    font-size: 18px;
+    padding: 10px 14px; 
+    position: absolute;
+    bottom: 12px;
+    width: 100%;
+    text-align: center;
+    font-family: "Lexend Deca", sans-serif;
+}
+.numbertext{
+    color: #627455;
+    font-size: 16px;
+    padding: 10px 14px;
+    position: absolute; 
+    font-weight: 40px;
+    top: 0;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+.dot{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover{
+    background-color: yellow;
+}
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s
+}
+@keyframes fade{
+    from{opacity: .4}
+    to {opacity: 1}
+}
+.content-area{
+    padding: 10% 0;
+}
+.box.animate .content{
+    transform: rotateY(180deg);
+}
+.box,
+.front,
+.back{
+    width: 415px;
+    height: 400px;
+}
+.content{
+    transition: 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+.front,
+.back{
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.front{
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+.back{
+    display: flex;
+    justify-content: center; 
+    text-align: center;
+    padding:15px;
+    transform: rotateY(180deg);
+    background-color: red;
+}
+.back-content{
+    border: 10px inset #8bad8b;
+    padding: 120px 5px;
+}
+.img-1{
+    background: url(Images/grey.jpg);
+    background-size: cover;
+    background-position: center center; 
 }

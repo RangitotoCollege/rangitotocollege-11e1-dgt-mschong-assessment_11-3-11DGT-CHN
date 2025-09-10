@@ -22,9 +22,9 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class = "learningcontent">
-        <a href="">Subtopic 1</a>
-        <a href="">Subtopic 2</a>
-        <a href="">Subtopic 3</a>
+        <a href="learning1.html">Microbes</a>
+        <a href="learning2.html">Beneficial Microbes</a>
+        <a href="learning3.html">Harmful Microbes</a>
       </div>
     </div>
     <div class= "learningdropdown">
@@ -32,9 +32,9 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class = "learningcontent">
-        <a href="">Subtopic 1</a>
-        <a href="">Subtopic 2</a>
-        <a href="">Subtopic 3</a>
+        <a href="">Microbes</a>
+        <a href="">Beneficial Microbes</a>
+        <a href="">Harmful Microbes</a>
       </div>
     </div>
     <div class= "learningdropdown">
@@ -48,49 +48,56 @@
       </div>
     </div>
   </div>
+  
   <div class ="introduction">
     <h1 class ="intro">Here to cram for an exam?</h1>
     <h2 class="introsub">With this study resource, you will be able to learn more about the NCEA Level 1 Biology as. <br> will support the end of curriculum at the end of year.  </h2>
   </div>
-  <div class="introcards">
-    <h1 class="titlecards">Make your studying efficient <br> with our flashcards</h1>
-    <p class="subcards">Choose the specific topics that you need to study with our <br>flashcards today, made from the NCEA Level 1 Biology.</p>
-
-  </div>
-  <button type="button" class="collapsible">Click here to go on flashcards</button>
-  <div class="content">
-    <a class ="topics" href="">Sub-topic: Biology </a>
-    <a class ="topics" href="">Sub-topic: Biology</a>
-    <a class ="topics" href="">Sub-topic: Biology</a>
-  </div>
-
-  <img class = "placeholder" src="Images/grey.jpg" alt="placeholder">
-  <div class="introcards">
-  <h1 class="titlecards">Make your studying efficient <br> with our slides. </h1>
-  <p class="subcards">Choose the specific topics that you need to study with our <br>slides  today, made from the NCEA Level 1 Biology.</p>
-
-  </div>
-  <button type="button" class="collapsible">Click here to go on learning slides</button>
-  <div class="content">
-    <a class ="topics" href="">Sub-topic: Biology </a>
-    <a class ="topics" href="">Sub-topic: Biology</a>
-    <a class ="topics" href="">Sub-topic: Biology</a>
-  </div>
-
-  <img class = "placeholder" src="Images/grey.jpg" alt="placeholder">
-
+  <div class ="flashintro">
+    <!--This is the individual section for flashcards-->
+    <img class = "placeholder1" src="Images/grey.jpg" alt="placeholder">
     <div class="introcards">
-  <h1 class="titlecards">Make your studying efficient <br> with our slides. </h1>
-  <p class="subcards">Choose the specific topics that you need to study with our <br>slides  today, made from the NCEA Level 1 Biology.</p>
+      <h1 class="titlecards">Make your studying efficient <br> with our flashcards</h1>
+      <p class="subcards">Choose the specific topics that you need to study with our <br>flashcards today, made from the NCEA Level 1 Biology.</p>
+    </div>
+  <!--This is the collapsible header for flashcards that leads to its 3 separate webpages-->
+    <button type="button" class="collapsible">Click here to go on flashcards</button>
+  <!--The button type allows me to treat the element as a click function only, so I am able to recall it in js-->
+    <div class="content"><!--This content is hidden until the button is clicked, is held in the same layout as the dropdown in the navbar-->
+      <a class ="topics" href="">Sub-topic: Biology </a>
+      <a class ="topics" href="">Sub-topic: Biology</a>
+      <a class ="topics" href="">Sub-topic: Biology</a>
+    </div>
+  </div>
+  <!--This is the placeholder image for the flashcards. Will be replaced with actual content later-->
+  <div class ="slidesintro">
+    <img class = "placeholder2" src="Images/grey.jpg" alt="placeholder">
+    <div class="introcards">
+    <h1 class="titlecards">Improve your learning with our <br> slideshows today.</h1>
+    <p class="subcards">Choose the specific topics that you need to study with our <br>slides  today, made from the NCEA Level 1 Biology.</p>
+    </div>
+    <button type="button" class="collapsible">Click here to go on learning slides</button>
+    <div class="content">
+      <a class ="topics" href="">Sub-topic: Biology </a>
+      <a class ="topics" href="">Sub-topic: Biology</a>
+      <a class ="topics" href="">Sub-topic: Biology</a>
+    </div>
 
   </div>
-  <button type="button" class="collapsible">Click here to go on learning quizzes</button>
-  <div class="content">
-    <a class ="topics" href="">Easy mode </a>
-    <a class ="topics" href="">Medium mode</a>
-    <a class ="topics" href="">Hard mode</a>
-  </div>
+  <div class ="quizzesintro">
+    <img class = "placeholder3" src="Images/grey.jpg" alt="placeholder">
+    <div class="introcards">
+      <h1 class="titlecards">Practice what you've learnt <br> with our quizzes.</h1>
+      <p class="subcards">Choose the specific topics that you need to study with our <br>slides  today, made from the NCEA Level 1 Biology.</p>
 
-  <img class = "placeholder" src="Images/grey.jpg" alt="placeholder">
+    </div>
+    <button type="button" class="collapsible">Click here to go on learning quizzes</button>
+    <div class="content">
+      <a class ="topics" href="">Easy mode </a>
+      <a class ="topics" href="">Medium mode</a>
+      <a class ="topics" href="">Hard mode</a>
+    </div>
+
+  </div>
 </body>
 </html>
