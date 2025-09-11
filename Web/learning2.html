@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <!--This is a link to the arrow icons.-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <!--The navbar across webpages-->
+  <div class = "navbar">
+    <a href="">
+    <img class = "logo" src="Images/logo.svg.svg" alt="logo"></a>
+
+    <a class = "current" href="index.html">Homepage</a>
+    <div class= "learningdropdown">
+      <button class="dropbtn">Learning&nbsp;
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class = "learningcontent">
+        <a href="learning1.html">Microbes</a>
+        <a href="learning2.html">Beneficial Microbes</a>
+        <a href="learning3.html">Harmful Microbes</a>
+      </div>
+    </div>
+    <div class= "learningdropdown">
+      <button class="dropbtn">Flashcards&nbsp;
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class = "learningcontent">
+        <a href="">Microbes</a>
+        <a href="">Beneficial Microbes</a>
+        <a href="">Harmful Microbes</a>
+      </div>
+    </div>
+    <div class= "learningdropdown">
+      <button class="dropbtn">Quizzes&nbsp;
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class = "learningcontent">
+        <a href="">Easy</a>
+        <a href="">Medium</a>
+        <a href="">Hard</a>
+      </div>
+    </div>
+  </div>
+  <div class ="learningintro">
+    <h1 class="learningheading">
+        BENEIFCIAL MICROBES
+    </h1>
+  </div>
+  <h2 class ="headersub">
+    Introduction to Microbes
+  </h2>
+  <p class ="learningsub">
+    In Microbes, we will teach you an understanding of the learning objectives that are needed to complete your NCEA Level 1 exam. TThis <br>will include the structure of microorganisms, how to culture them, their life processes, and the environmental factors that affect their<br>growth. This is just filler text like lorem ipsum because I cannot bother writing anything at the moment/currently.
+  </p>
+  <div class ="slideshow-container">
+    <div class="mySlides fade">
+        <div class="numbertext"> 1 / 3</div>
+        <img src ="Images/grey.jpg" style = "width: 100%">
+        <div class = "captiontext">Caption Text</div>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext"> 2 / 3</div>
+        <img src ="Images/grey.jpg" style = "width: 100%">
+        <div class = "captiontext">Caption Two</div>
+    </div>
+    <div class="mySlides fade">
+        <div class="numbertext"> 3 / 3</div>
+        <img src ="Images/grey.jpg" style = "width: 100%">
+        <div class = "captiontext">Caption THree</div>
+    </div>
+    <a class = "prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class = "next" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+  <div style ="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+</body>
+</html>
