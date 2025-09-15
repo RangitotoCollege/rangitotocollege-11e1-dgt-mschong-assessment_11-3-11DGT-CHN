@@ -1,3 +1,4 @@
+
 body{
     margin: 0px;
 }
@@ -83,65 +84,185 @@ body{
 .dropbtn:hover{
     color: #8bad8b;
 }
-
-.slidesintro .titlecards{
+/*This is the beginning of the 3 introductions*/
+/*This is for the slides introduction css code only*/
+.slidesintro{/*Separate div for the slides section*/
+    margin-top: 8em;
+    background-color: #e6f0dc;
+    padding: 6em;
+}
+.introheader2{/*The header for the slide section only*/
     font-family: "Lexend Deca", sans-serif;
     color: #627455;
-    font-weight:400px;
-    font-size:33px;
-
+    font-weight: 45px;
+    font-size: 2.5em;
+    margin-left: 15em;
 }
-
-.flashintro .titlecards{
-    margin-right: 30px;
+.subheader2{/*The subheader for the slides section only*/
     font-family: "Lexend Deca", sans-serif;
     color: #627455;
-    font-weight:400px;
-    font-size:33px;
+    font-size: 1.2em;
+    margin-left: 31.5em;
 }
-
-.quizzesintro .titlecards{
-    margin-right: 30px;
-    font-family: "Lexend Deca", sans-serif;
-    color: #627455;
-    font-weight:400px;
-    font-size:33px;
-
-}
-
-.placeholder1{
-    float: left;
-    width: 500px;
-    height:320px;
-    margin: 50px;
-    padding-left: 50px;
-}
-.placeholder2{
-    float:right;
-    width: 500px;
-    height:320px; 
-    margin: 50px;
-    padding-top:50px;
-}
-.placeholder3{
-    float: left;
-    width: 500px;
-    height: 320px;
-    margin-left:50px;
-}
-
-.topics{
+.topics2{/*Dropdown text for the collapsible for slides only*/
     font-family: "Lexend Deca", sans-serif;
     overflow: hidden;
     position: relative;
     text-align: left;
     display: block;
     padding: 12px 16px;
+    text-decoration: none;
+    color: #627455;
+}
+.introplace2{/*Slides image*/
+    float: left;
+    width: 35em;
+    height: 20em;
+    margin-left: -0.8em;
+    margin-top: -3em;
 }
 
+.collapsible2{/*Initial collapsible for slides only*/
+    background-color: white;
+    color:#627455;
+    cursor:pointer;
+    padding:1.3em;
+    width:28%;
+    border:1px white solid;
+    border-radius: 0.8em;
+    outline: none;
+    font-size:1em;
+    font-family: "Lexend Deca", sans-serif;
+    margin-top: 1em;
+    margin-left: 3.5em;
+}
+
+.collapsible2:hover{ /*Collapsible when hovered for slides only*/
+    background-color:#8bad8b;
+}
+.active2{/*Activated collapsible for slides only*/
+    border-radius: 0.8em 0.8em 0 0;
+    background-color: white;
+    color:#627455;
+    cursor:pointer;
+    padding:1.3em;
+    width:28%;
+    border:1px white solid;
+    outline: none;
+    font-size:1em;
+    font-family: "Lexend Deca", sans-serif;
+    margin-top: 1em;
+}
+
+.content2 /*Dropdown collapsible for slides only*/{
+    display: none;
+    width:25.1%;
+    overflow:hidden;
+    background-color:#d5e3c8;
+    position: absolute;
+    border: 1px #d5e3c8 solid;
+    border-radius: 0 0 0.8em 0.8em;
+    margin-left: 37.5em;
+}
+/*This is for the flashcards and quizzes introduction*/
+.flashcardsintro{/*Separate div for the flashcards section*/
+    margin-left: 8em;
+    margin-top: 6em;
+    margin-bottom: -1em;
+}
+
+.quizzesintro{/*Separate div for the quizzes section*/
+    margin-left: 8em; 
+    margin-top: 6em; 
+    margin-bottom: 6em;
+}
+.introheader{/*The header for the flashcards section and the quizzes section*/
+    font-family: "Lexend Deca", sans-serif;
+    color: #627455;
+    font-weight: 45px;
+    font-size: 2.8em;
+}
+.subheader{/*The subheader for the flashcards section and the quizzes section*/
+    font-family: "Lexend Deca", sans-serif;
+    color: #627455;
+    font-size: 1.2em;
+}
+.introplace1{/*Flashcard image*/
+    float: right;
+    width: 35em;
+    height: 20em;
+    margin-top: 0.8em; 
+    margin-left: 7em;
+    margin-right: 4em;
+}
+
+.introplace3{/*Quizzes image*/
+    float: right; 
+    width: 35em;
+    height: 20em;
+    margin-right: 4em;
+    margin-top: 0.8em;
+    margin-left: 7em;
+}
+
+.topics{/*Dropdown text for the collapsible for flashcards and quizzes*/
+    font-family: "Lexend Deca", sans-serif;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #627455;
+}
+/*This is the hover over the topics in the cards and quizzes collapsible*/
 .topics:hover{
     background-color: #8bad8b;
 }
+/*This is the initial collapsible for the flashcards and quizzes only*/
+.collapsible{
+    background-color: #e6f0dc;
+    color:#627455;
+    cursor:pointer;
+    padding:1.3em;
+    width:28%;
+    border:1px #e6f0dc solid;
+    border-radius: 0.8em;
+    outline: none;
+    font-size:1em;
+    font-family: "Lexend Deca", sans-serif;
+    margin-top: 1em;
+}
+/*This is the collapsible for flashcards and slides when hovered over*/
+.collapsible:hover{
+    background-color:#8bad8b;
+}
+/*This is the activated collapsible when clicked on for flashcards or quizzes*/
+.active{
+    border-radius: 0.8em 0.8em 0 0;
+    background-color: #e6f0dc;
+    color:#627455;
+    cursor:pointer;
+    padding:1.3em;
+    width:28%;
+    border:1px #e6f0dc solid;
+    outline: none;
+    font-size:1em;
+    font-family: "Lexend Deca", sans-serif;
+    margin-top: 1em;
+}
+/*This is the dropdown collapsible when activated for flashcards or quizzes*/
+.content{
+    display: none;
+    width:25.3%;
+    overflow:hidden;
+    background-color:#d5e3c8;
+    position: absolute;
+    border: 1px #d5e3c8 solid;
+    border-radius: 0 0 0.8em 0.8em;
+}
+/*This is the end of the flashcards/slides/quizzes introduction*/
+
 .introduction{
     background-color: #e6f0dc;
     margin:0px;
@@ -183,32 +304,6 @@ body{
     font-size: 16px;
     margin-left: 50px;
     margin-top:40px;
-}
-
-.collapsible{
-    background-color: #e6f0dc;
-    color:#627455;
-    cursor:pointer;
-    padding:18px;
-    width:30%;
-    margin-left:100px;
-    border:none;
-    text-align:left;
-    outline: none;
-    font-size:15px;
-    margin-top:20px;
-}
-
-.collapsible:hover{
-    background-color:#8bad8b;
-}
-.content{
-    padding: 0 18px;
-    display: none;
-    margin-left:100px;
-    width:27.5%;
-    overflow:hidden;
-    background-color:#e6f0dc
 }
 
 .learningheading{
@@ -303,7 +398,10 @@ body{
 }
 
 .active, .dot:hover{
-    background-color: yellow;
+    background-color: #e6f0dc;
+}
+.active2, .dot:hover{
+    background-color: white;
 }
 .fade{
     animation-name: fade;
@@ -315,46 +413,4 @@ body{
 }
 .content-area{
     padding: 10% 0;
-}
-.box.animate .content{
-    transform: rotateY(180deg);
-}
-.box,
-.front,
-.back{
-    width: 415px;
-    height: 400px;
-}
-.content{
-    transition: 0.8s;
-    transform-style: preserve-3d;
-    position: relative;
-}
-.front,
-.back{
-    backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.front{
-    z-index: 2;
-    transform: rotateY(0deg);
-}
-.back{
-    display: flex;
-    justify-content: center; 
-    text-align: center;
-    padding:15px;
-    transform: rotateY(180deg);
-    background-color: red;
-}
-.back-content{
-    border: 10px inset #8bad8b;
-    padding: 120px 5px;
-}
-.img-1{
-    background: url(Images/grey.jpg);
-    background-size: cover;
-    background-position: center center; 
 }
