@@ -2,7 +2,7 @@ from tkinter import *
 m = Tk()
 
 import random
-
+import time
 
 global title, Game1, Game2, Game3
 title = "Caio's Cool Collections"
@@ -80,7 +80,7 @@ def GK_game():
         "What is the meaning of life, the universe and everything?": "42",
         "What does the acronym 'www' stand for?": "World Wide Web",
         "What is the name of the first 3D platforming video game?": "Super Mario 64",
-        "What is the function to output text in Python?": "print()",
+        "What is the function to output text in Python?": "print",
         "Who is the most sassy teacher?": "Miss. Chong",
         "What is the slang name for New York City?": "The Big Apple",
         "What is a group of owls called?": "A parliament",
@@ -92,8 +92,18 @@ def GK_game():
         "What is the fire type pokemon starter from the third generation?": "Torchic",
         "What is the water type pokemon starter from the third generation?": "Mudkip"
     }
-    questions = random.sample(list(q_a.keys()), 10) # help from co-pilot
-    answers = list(q_a.values()) # help from co-pilot
+
+    #Collecting 10 random questions and their answers
+    questions = []
+    for x in range(10):
+        rand_q = random.choice(list(q_a.keys()))
+        while rand_q in questions:
+            rand_q = random.choice(list(q_a.keys()))
+        questions.append(rand_q)
+
+    answers = []
+    for question in questions:
+        answers.append(q_a[question])
 
     global GK_frame
     GK_frame = Frame(m)
@@ -101,16 +111,28 @@ def GK_game():
 
     GK_label = Label(GK_frame, text="General Knowledge Quiz", font=("Arial", 30, "bold"))
     
+    i = 0
+
+    #Function for what happens when you submit an answer
     def GK_submit():
-        global answer_entry
+        global answer_entry, error_mes
         sub_answer = answer_entry.get()
         if len(sub_answer) > 0:
             if sub_answer.lower() == answers[i].lower():
                 print("Correct!")
+                error_mes.destroy()
+                error_mes = Label(GK_frame, text="Correct!", font=("Arial", 16, "bold"), fg="green")
+                error_mes.grid(row=4, column=0, columnspan=3)
             else:
                 print("Incorrect! The correct answer was: {}".format(answers[i]))
+                error_mes.destroy()
+                error_mes = Label(GK_frame, text="Incorrect!", font=("Arial", 16, "bold"), fg="red")
+                error_mes.grid(row=4, column=0, columnspan=3)
+        else:
+            error_mes.destroy()
+            error_mes = Label(GK_frame, text="Please enter an answer before submitting.", font=("Arial", 12), fg="red")
+            error_mes.grid(row=4, column=0, columnspan=3)
     
-    i = 0
     chosen_question = questions[i]
     question_num = Label(GK_frame, text="Question {}:".format(str(i+1)), font=("Arial", 16))
     question = Label(GK_frame, text=chosen_question, font=("Arial", 20))
@@ -118,6 +140,7 @@ def GK_game():
     global answer_entry
     answer_entry = Entry(GK_frame, font=("Arial", 16))
     answer_button = Button(GK_frame, text="Submit", font=("Arial", 12), command=GK_submit)
+    error_mes = Label(GK_frame, text="", font=("Arial", 12), fg="red")
 
     global menu_exit
     menu_exit.config(text="Exit to Menu", command=exit_to_menu)
@@ -129,6 +152,7 @@ def GK_game():
     answer_label.grid(row=3, column=0, pady=30, sticky=E)
     answer_entry.grid(row=3, column=1, padx=10, sticky=W+E)
     answer_button.grid(row=3, column=2, sticky=W)
+    error_mes.grid(row=4, column=0, columnspan=3)
     
 
 def exit_to_menu():
