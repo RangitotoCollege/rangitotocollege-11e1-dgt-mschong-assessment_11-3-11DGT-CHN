@@ -1,3 +1,416 @@
-body {
-    background-color: blanchedalmond;
+
+body{
+    margin: 0px;
+}
+.navbar{
+    overflow: hidden; 
+    background-color: #ffffff;
+}
+
+
+.navbar a{
+    margin-top:8px;
+    margin-left:8px;
+    float: left;
+    font-size: 15px;
+    color: #627455;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: 600; 
+    font-family:"Lexend Deca", sans-serif;
+
+}
+
+.current{
+    border-bottom: 4px solid #8bad8b;
+    border-radius: 4px;
+    left:5px;
+}
+
+.current:hover{
+    color:#8bad8b;
+}
+.learningdropdown {
+    float:left;
+    overflow: hidden;
+}
+.learningdropdown a{
+    float:left;
+    font-weight: normal; 
+}
+.learningdropdown .dropbtn{
+    position: relative;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    color: #627455;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family:"Lexend Deca", sans-serif;
+    font-weight: 600; 
+    overflow:hidden;
+    margin-top: 8px;
+}
+
+.learningcontent{
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    padding: 10px;
+    border-radius: 0 0 25px 25px;
+}
+.learningcontent a{
+    float: none;
+    color: #627455;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left; 
+    overflow: hidden;
+    position: relative;
+}
+
+.learningcontent a:hover{
+    background-color: #e6f0dc;
+    border-radius: 25px;
+}
+
+.learningdropdown:hover .learningcontent{
+    display: block;
+}
+
+.dropbtn:hover{
+    color: #8bad8b;
+}
+/*This is the beginning of the 3 introductions*/
+/*This is for the slides introduction css code only*/
+.slidesintro{/*Separate div for the slides section*/
+    margin-top: 8em;
+    background-color: #e6f0dc;
+    padding: 6em;
+}
+.introheader2{/*The header for the slide section only*/
+    font-family: "Lexend Deca", sans-serif;
+    color: #627455;
+    font-weight: 45px;
+    font-size: 2.5em;
+    margin-left: 15em;
+}
+.subheader2{/*The subheader for the slides section only*/
+    font-family: "Lexend Deca", sans-serif;
+    color: #627455;
+    font-size: 1.2em;
+    margin-left: 31.5em;
+}
+.topics2{/*Dropdown text for the collapsible for slides only*/
+    font-family: "Lexend Deca", sans-serif;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #627455;
+}
+.introplace2{/*Slides image*/
+    float: left;
+    width: 35em;
+    height: 20em;
+    margin-left: -0.8em;
+    margin-top: -3em;
+}
+
+.collapsible2{/*Initial collapsible for slides only*/
+    background-color: white;
+    color:#627455;
+    cursor:pointer;
+    padding:1.3em;
+    width:28%;
+    border:1px white solid;
+    border-radius: 0.8em;
+    outline: none;
+    font-size:1em;
+    font-family: "Lexend Deca", sans-serif;
+    margin-top: 1em;
+    margin-left: 3.5em;
+}
+
+.collapsible2:hover{ /*Collapsible when hovered for slides only*/
+    background-color:#8bad8b;
+}
+.active2{/*Activated collapsible for slides only*/
+    border-radius: 0.8em 0.8em 0 0;
+    background-color: white;
+    color:#627455;
+    cursor:pointer;
+    padding:1.3em;
+    width:28%;
+    border:1px white solid;
+    outline: none;
+    font-size:1em;
+    font-family: "Lexend Deca", sans-serif;
+    margin-top: 1em;
+}
+
+.content2 /*Dropdown collapsible for slides only*/{
+    display: none;
+    width:25.1%;
+    overflow:hidden;
+    background-color:#d5e3c8;
+    position: absolute;
+    border: 1px #d5e3c8 solid;
+    border-radius: 0 0 0.8em 0.8em;
+    margin-left: 37.5em;
+}
+/*This is for the flashcards and quizzes introduction*/
+.flashcardsintro{/*Separate div for the flashcards section*/
+    margin-left: 8em;
+    margin-top: 6em;
+    margin-bottom: -1em;
+}
+
+.quizzesintro{/*Separate div for the quizzes section*/
+    margin-left: 8em; 
+    margin-top: 6em; 
+    margin-bottom: 6em;
+}
+.introheader{/*The header for the flashcards section and the quizzes section*/
+    font-family: "Lexend Deca", sans-serif;
+    color: #627455;
+    font-weight: 45px;
+    font-size: 2.8em;
+}
+.subheader{/*The subheader for the flashcards section and the quizzes section*/
+    font-family: "Lexend Deca", sans-serif;
+    color: #627455;
+    font-size: 1.2em;
+}
+.introplace1{/*Flashcard image*/
+    float: right;
+    width: 35em;
+    height: 20em;
+    margin-top: 0.8em; 
+    margin-left: 7em;
+    margin-right: 4em;
+}
+
+.introplace3{/*Quizzes image*/
+    float: right; 
+    width: 35em;
+    height: 20em;
+    margin-right: 4em;
+    margin-top: 0.8em;
+    margin-left: 7em;
+}
+
+.topics{/*Dropdown text for the collapsible for flashcards and quizzes*/
+    font-family: "Lexend Deca", sans-serif;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #627455;
+}
+/*This is the hover over the topics in the cards and quizzes collapsible*/
+.topics:hover{
+    background-color: #8bad8b;
+}
+/*This is the initial collapsible for the flashcards and quizzes only*/
+.collapsible{
+    background-color: #e6f0dc;
+    color:#627455;
+    cursor:pointer;
+    padding:1.3em;
+    width:28%;
+    border:1px #e6f0dc solid;
+    border-radius: 0.8em;
+    outline: none;
+    font-size:1em;
+    font-family: "Lexend Deca", sans-serif;
+    margin-top: 1em;
+}
+/*This is the collapsible for flashcards and slides when hovered over*/
+.collapsible:hover{
+    background-color:#8bad8b;
+}
+/*This is the activated collapsible when clicked on for flashcards or quizzes*/
+.active{
+    border-radius: 0.8em 0.8em 0 0;
+    background-color: #e6f0dc;
+    color:#627455;
+    cursor:pointer;
+    padding:1.3em;
+    width:28%;
+    border:1px #e6f0dc solid;
+    outline: none;
+    font-size:1em;
+    font-family: "Lexend Deca", sans-serif;
+    margin-top: 1em;
+}
+/*This is the dropdown collapsible when activated for flashcards or quizzes*/
+.content{
+    display: none;
+    width:25.3%;
+    overflow:hidden;
+    background-color:#d5e3c8;
+    position: absolute;
+    border: 1px #d5e3c8 solid;
+    border-radius: 0 0 0.8em 0.8em;
+}
+/*This is the end of the flashcards/slides/quizzes introduction*/
+
+.introduction{
+    background-color: #e6f0dc;
+    margin:0px;
+}
+
+.intro{
+    font-family: "Lexend Deca", sans-serif;
+    text-align: center;
+    color: #627455;
+    font-size:48px;
+    margin: 0px;
+    padding-top: 110px;
+    font-weight:400px;
+}
+
+.introsub{
+    font-family: "Lexend Deca", sans-serif;
+    text-align: center;
+    font-weight: normal; 
+    font-size: 18px;
+    color: #627455;
+    padding-top:5px;
+    padding-bottom:70px;
+}
+.logo{
+    width: 50px;
+    height: 30px;
+    margin:0px;
+    padding:0px;
+    overflow:hidden;
+}
+
+
+
+.subcards{
+    font-family: "Lexend Deca", sans-serif;
+    color: #627455;
+    font-weight: normal; 
+    font-size: 16px;
+    margin-left: 50px;
+    margin-top:40px;
+}
+
+.learningheading{
+    font-family: "Lexend Deca", sans-serif;
+    text-align: center;
+    color: white;
+    background-color: #8bad8b;
+    font-size: 80px;
+    margin: 0px;
+    padding: 110px;
+    font-weight:40px;
+}
+
+.learningsub{
+    font-family: "Lexend Deca", sans-serif;
+    text-align: center;
+    font-size: 18px;
+    color: #627455;
+    padding-top: 5px;
+
+}
+
+.headersub{
+    font-size: 30px;
+    text-align: center;
+    color: #627455;
+    font-weight: 60px;
+    padding-top: 10px;
+    font-family: "Lexend Deca", sans-serif;
+}
+*{box-sizing:border-box}
+
+.slideshow-container{
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+
+}
+.mySlides{
+    display: none;
+}
+.prev, .next{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight:bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.next{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover{
+    background-color: rgba(0,0,0,0.8)
+}
+.captiontext{
+    color: #627455;
+    font-size: 18px;
+    padding: 10px 14px; 
+    position: absolute;
+    bottom: 12px;
+    width: 100%;
+    text-align: center;
+    font-family: "Lexend Deca", sans-serif;
+}
+.numbertext{
+    color: #627455;
+    font-size: 16px;
+    padding: 10px 14px;
+    position: absolute; 
+    font-weight: 40px;
+    top: 0;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+.dot{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover{
+    background-color: #e6f0dc;
+}
+.active2, .dot:hover{
+    background-color: white;
+}
+.fade{
+    animation-name: fade;
+    animation-duration: 1.5s
+}
+@keyframes fade{
+    from{opacity: .4}
+    to {opacity: 1}
+}
+.content-area{
+    padding: 10% 0;
 }

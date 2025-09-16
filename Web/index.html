@@ -4,11 +4,119 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Webpage</title>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <!--This is a link to the arrow icons.-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <h1>Hello world!</h1>
-    <p>Welcome to my webpage</p>
-    <script src="index.js"></script>
-  </body>
+  <!--The navbar across webpages-->
+  <div class = "navbar">
+    <a href="">
+    <img class = "logo" src="Images/logo.svg.svg" alt="logo"></a>
+
+    <a class = "current" href="">Homepage</a>
+    <div class= "learningdropdown">
+      <button class="dropbtn">Learning&nbsp;
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class = "learningcontent">
+        <a href="learning1.html">Microbes</a>
+        <a href="learning2.html">Beneficial Microbes</a>
+        <a href="learning3.html">Harmful Microbes</a>
+      </div>
+    </div>
+    <div class= "learningdropdown">
+      <button class="dropbtn">Flashcards&nbsp;
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class = "learningcontent">
+        <a href="">Microbes</a>
+        <a href="">Beneficial Microbes</a>
+        <a href="">Harmful Microbes</a>
+      </div>
+    </div>
+    <div class= "learningdropdown">
+      <button class="dropbtn">Quizzes&nbsp;
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class = "learningcontent">
+        <a href="">Easy</a>
+        <a href="">Medium</a>
+        <a href="">Hard</a>
+      </div>
+    </div>
+  </div>
+  <div class ="introduction">
+    <h1 class ="intro">Here to cram for an exam?</h1>
+    <h2 class="introsub">With this study resource, you will be able to learn more about the NCEA Level 1 Biology as. <br> will support the end of curriculum at the end of year.  </h2>
+  </div>
+  <!--Div class for the entire flashcards/slides/quizzes introduction-->
+  <div class = "intros">
+    <!--Individual div section for flashcards, helps change background color and enhance individuality more-->
+    <div class ="flashcardsintro">
+      <img class ="introplace1" src="Images/grey.jpg" alt="introplace">
+      <h1 class="introheader">Recall key biology <br> terms now</h1>
+      <p class ="subheader">With our flashcards you'll be able to memorise the <br>necessary biology vocabulary for your school exams. </p>
+      <button type="button" class="collapsible">Click here to go on flashcards</button>
+      <div class="content">
+        <a class ="topics" href="">Microbes </a>
+        <a class ="topics" href="">Beneficial Microbes</a>
+        <a class ="topics" href="">Harmful Microbes</a>
+      </div>
+    </div>
+    <!--Individual div section for slides, will have a green background colour to contrast from the other divs-->
+    <div class = "slidesintro">
+      <img class ="introplace2" src="Images/grey.jpg" alt="introplace">
+      <h1 class = "introheader2">Learn about biology now</h1>
+      <p class="subheader2">With our slides, you'll be able to learn more about the learning objectives that are needed for the exam. </p>
+      <button type="button" class="collapsible2">Click here to go on learning slides</button>
+      <div class="content2">
+        <a class ="topics2" href="">Microbes </a>
+        <a class ="topics2" href="">Beneficial Microbes</a>
+        <a class ="topics2" href="">Harmful Microbes</a>
+    </div>
+    </div>
+    <!--Individual div section for quizzes, has a white background colour to contrast from the slides section-->
+    <div class="quizzesintro">
+      <img class ="introplace3" src="Images/grey.jpg" alt="introplace">
+      <h1 class="introheader">Test your key knowledge today </h1>
+      <p class="subheader">With our quizzes, you'll be able to test the learning objectives that you have learnt across the curriculum.</p>
+      <button type="button" class="collapsible">Click here to go on learning quizzes</button>
+      <div class="content">
+        <a class ="topics" href="">Easy mode </a>
+        <a class ="topics" href="">Medium mode</a>
+        <a class ="topics" href="">Hard mode</a>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+  </div>
+</body>
 </html>
