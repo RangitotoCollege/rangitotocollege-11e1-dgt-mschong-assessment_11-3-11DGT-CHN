@@ -81,7 +81,7 @@ def GK_game():
         "What does the acronym 'www' stand for?": "World Wide Web",
         "What is the name of the first 3D platforming video game?": "Super Mario 64",
         "What is the function to output text in Python?": "print",
-        "Who is the most sassy teacher?": "Miss. Chong",
+        "Who is the most sassy teacher?": "Miss Chong",
         "What is the slang name for New York City?": "The Big Apple",
         "What is a group of owls called?": "A parliament",
         "What is the symbol for iron on the periodic table?": "Fe",
@@ -110,29 +110,58 @@ def GK_game():
     GK_frame.pack(pady=50)
 
     GK_label = Label(GK_frame, text="General Knowledge Quiz", font=("Arial", 30, "bold"))
-    
-    i = 0
 
     #Function for what happens when you submit an answer
     def GK_submit():
-        global answer_entry, error_mes
+        global answer_entry, error_mes, i, GK_score
         sub_answer = answer_entry.get()
         if len(sub_answer) > 0:
             if sub_answer.lower() == answers[i].lower():
-                print("Correct!")
                 error_mes.destroy()
-                error_mes = Label(GK_frame, text="Correct!", font=("Arial", 16, "bold"), fg="green")
+                error_mes = Label(GK_frame, text="Correct!  +1 point", font=("Arial", 16, "bold"), fg="green")
                 error_mes.grid(row=4, column=0, columnspan=3)
+                answer_entry.delete(0, END)
+                GK_score += 1
             else:
-                print("Incorrect! The correct answer was: {}".format(answers[i]))
                 error_mes.destroy()
                 error_mes = Label(GK_frame, text="Incorrect!", font=("Arial", 16, "bold"), fg="red")
                 error_mes.grid(row=4, column=0, columnspan=3)
+                answer_entry.delete(0, END)
+            i += 1
+            print(i+1)
+            # Show next question
+            if i < 10:
+                chosen_question = questions[i]
+                question_num.config(text="Question {}:".format(str(i+1)))
+                question.config(text=chosen_question)
+            else: # End of quiz
+                error_mes.destroy()
+                error_mes = Label(GK_frame, text="Quiz Over! You have completed all the questions.", font=("Arial", 18))
+                error_mes.grid(row=4, column=0, columnspan=3)
+                question_num.destroy()
+                question.destroy()
+                answer_label.destroy()
+                answer_entry.destroy()
+                answer_button.destroy()
+                score_label = Label(GK_frame, text="Your final score is: {}/10".format(GK_score), font=("Arial", 16, "bold"))
+                score_label.grid(row=5, column=0, columnspan=3, pady=20)
+                if GK_score == 10:
+                    result_label = Label(GK_frame, text="Perfect Score! Well done!", font=("Arial", 16, "bold"), fg="green")
+                    result_label.grid(row=6, column=0, columnspan=3)
+                elif GK_score >= 7:
+                    result_label = Label(GK_frame, text="Great Job!", font=("Arial", 16, "bold"))
+                    result_label.grid(row=6, column=0, columnspan=3)
+                elif GK_score >= 4:
+                    result_label = Label(GK_frame, text="Not bad, but you can do better!", font=("Arial", 16, "bold"))
+                    result_label.grid(row=6, column=0, columnspan=3)
         else:
             error_mes.destroy()
             error_mes = Label(GK_frame, text="Please enter an answer before submitting.", font=("Arial", 12), fg="red")
             error_mes.grid(row=4, column=0, columnspan=3)
-    
+
+    global i, GK_score
+    GK_score = 0
+    i = 0
     chosen_question = questions[i]
     question_num = Label(GK_frame, text="Question {}:".format(str(i+1)), font=("Arial", 16))
     question = Label(GK_frame, text=chosen_question, font=("Arial", 20))
